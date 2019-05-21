@@ -12,8 +12,6 @@ namespace LinkedList
             get
             {
                 var size = 0;
-                if (Head is null) return size;
-
                 var node = Head;
 
                 while (node != null)
