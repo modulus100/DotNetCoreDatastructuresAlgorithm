@@ -61,7 +61,7 @@ namespace LinkedList
 
             while (node != null)
             {
-                if (Comparer<T>.Default.Compare(node.Value, value) >= 0)
+                if (node.Value.Equals(value))
                 {
                     return node;
                 }
@@ -76,7 +76,7 @@ namespace LinkedList
         {
             if (Head is null) return;
 
-            if (Comparer<T>.Default.Compare(Head.Value, value) >= 0)
+            if (Head.Value.Equals(value))
             {
                 Head = Head.Next;
                 return;
@@ -86,7 +86,7 @@ namespace LinkedList
 
             while (node.Next != null)
             {
-                if (Comparer<T>.Default.Compare(node.Next.Value, value) >= 0)
+                if (node.Next.Value.Equals(value))
                 {
                     node.Next = node.Next.Next;
                     return;
