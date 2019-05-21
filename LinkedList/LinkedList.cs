@@ -179,5 +179,17 @@ namespace LinkedList
         {
             return GetEnumerator();
         }
+
+        public override string ToString()
+        {
+            var str = "";
+            
+            foreach (var value in this)
+            {
+                str = str + value + ", ";
+            }
+
+            return str.Substring(0, str.Length - 2);
+        }
     }
 }
