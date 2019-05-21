@@ -33,11 +33,8 @@ namespace LinkedList
                 return;
             }
 
-            var tempHead = Head;
-            Head = new Node<T>(value)
-            {
-                Next = tempHead
-            };
+            var node = Head;
+            Head = new Node<T>(value) {Next = node};
         }
 
         public void Append(T value)
