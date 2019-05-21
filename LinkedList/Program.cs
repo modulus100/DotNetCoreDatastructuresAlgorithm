@@ -6,28 +6,23 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            var list = new LinkedList<int>();
+            var linkedList = new LinkedList<int>();
             
-            list.Append(4);
-            list.Append(5);
-            list.Append(6);
+            linkedList.Append(4);
+            linkedList.Append(5);
+            linkedList.Append(6);
             
-            list.Prepend(3);
-            list.Prepend(2);
-            list.Prepend(1);
+            linkedList.Prepend(3);
+            linkedList.Prepend(2);
+            linkedList.Prepend(1);
 
 
-            var node = list.Head;
-
-            while (node.Next != null)
+            foreach (var value in linkedList)
             {
-                Console.WriteLine(node.Value);
-                node = node.Next;
+                Console.WriteLine(value);
             }
-            
-            Console.WriteLine(node.Value);
-            
-            Console.WriteLine("search for 3, result: " + list.Search(3)?.Value);
+
+            Console.WriteLine("search for 3, result: " + linkedList.Search(3)?.Value);
         }
     }
 }

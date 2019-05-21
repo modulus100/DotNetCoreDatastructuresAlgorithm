@@ -1,8 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 
 namespace LinkedList
 {
-    public class LinkedList<T>
+    public class LinkedList<T> : IEnumerable<T>
     {
         public Node<T> Head { get; private set; }
 
@@ -159,6 +160,24 @@ namespace LinkedList
             }
 
             return list;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            var node = Head;
+
+            while (node.Next != null)
+            {
+                yield return node.Value;
+                node = node.Next;
+            }
+
+            yield return node.Value;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
