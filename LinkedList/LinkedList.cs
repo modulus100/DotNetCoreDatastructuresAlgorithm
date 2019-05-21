@@ -143,16 +143,7 @@ namespace LinkedList
             
             node.Next = new Node<T>(value);
         }
-
-        /*
-         * for value in linked_list:
-        if node is None:
-            node = Node(value)
-        else:
-            new_node = Node(value)
-            new_node.next = node
-            node = new_node
-         */
+        
         public void Reverse()
         {
             Node<T> node = null;
