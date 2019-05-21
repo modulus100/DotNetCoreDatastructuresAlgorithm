@@ -22,6 +22,10 @@ namespace LinkedList
                 Console.WriteLine(value);
             }
             
+            Console.WriteLine("");
+            Console.WriteLine(linkedList);
+            Console.WriteLine("reverse");
+            linkedList.Reverse();
             Console.WriteLine(linkedList);
 
             Console.WriteLine("search for 3, result: " + linkedList.Search(3)?.Value);

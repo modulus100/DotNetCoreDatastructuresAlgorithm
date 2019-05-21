@@ -144,6 +144,27 @@ namespace LinkedList
             node.Next = new Node<T>(value);
         }
 
+        /*
+         * for value in linked_list:
+        if node is None:
+            node = Node(value)
+        else:
+            new_node = Node(value)
+            new_node.next = node
+            node = new_node
+         */
+        public void Reverse()
+        {
+            Node<T> node = null;
+
+            foreach (var value in this)
+            {
+                node = node is null ? new Node<T>(value) : new Node<T>(value) {Next = node};
+            }
+
+            Head = node;
+        }
+
         public List<T> ToList()
         {
             var list = new List<T>();
